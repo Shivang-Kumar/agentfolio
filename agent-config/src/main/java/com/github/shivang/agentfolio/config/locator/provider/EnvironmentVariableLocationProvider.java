@@ -1,4 +1,4 @@
-package com.github.shivang.agentfolio.config.locator;
+package com.github.shivang.agentfolio.config.locator.provider;
 
 import java.nio.file.Path;
 import java.util.Optional;

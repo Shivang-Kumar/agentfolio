@@ -1,13 +1,8 @@
 package com.github.shivang.agentfolio.config.properties;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 
-@ConfigurationProperties(prefix = "agent")
-public record AgentProperties(
-        OwnerProperties owner,
-        String tone,
-        LlmProperties llm,
-        SchedulingProperties scheduling,
-        MemoryProperties memory
-) {
+public record AgentProperties(@NotNull @Valid OwnerProperties owner, @NotNull String tone,
+		@NotNull @Valid LlmProperties llm, SchedulingProperties scheduling,  MemoryProperties memory) {
 }

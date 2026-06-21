@@ -1,7 +1,6 @@
 package com.github.shivang.agentfolio.config.properties;
 
-public record OwnerProperties(
-        String name,
-        String role
-) {
+import jakarta.validation.constraints.NotBlank;
+
+public record OwnerProperties(@NotBlank String name, @NotBlank String role) {
 }
