@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.github.shivang.agentfolio.config.exception.AgentConfigurationException;
+import com.github.shivang.agentfolio.config.locator.provider.AgentConfigurationLocationProvider;
 
 
 @Component
@@ -47,7 +48,7 @@ public class AgentConfigLocationResolver {
 					throw new AgentConfigurationException("agent-config.yaml was not found in " + configDirectory);
 				}
 
-				return configDirectory;
+				return configFile;
 
 			}
 		}
