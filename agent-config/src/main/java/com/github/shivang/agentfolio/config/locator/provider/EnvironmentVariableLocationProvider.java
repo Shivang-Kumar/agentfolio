@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EnvironmentVariableLocationProvider implements AgentConfigurationLocationProvider {
+public class EnvironmentVariableLocationProvider implements AgentConfigurationDirectoryLocationProvider {
 
 	
     private static final String ENV_VARIABLE = "AGENT_CONFIG_PATH";

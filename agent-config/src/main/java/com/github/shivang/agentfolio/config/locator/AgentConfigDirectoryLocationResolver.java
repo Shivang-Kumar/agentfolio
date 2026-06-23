@@ -7,21 +7,21 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.github.shivang.agentfolio.config.exception.AgentConfigurationException;
-import com.github.shivang.agentfolio.config.locator.provider.AgentConfigurationLocationProvider;
+import com.github.shivang.agentfolio.config.locator.provider.AgentConfigurationDirectoryLocationProvider;
 
 
 @Component
-public class AgentConfigLocationResolver {
+public class AgentConfigDirectoryLocationResolver {
 
-	private final List<AgentConfigurationLocationProvider> providers;
+	private final List<AgentConfigurationDirectoryLocationProvider> providers;
 
-	public AgentConfigLocationResolver(List<AgentConfigurationLocationProvider> providers) {
+	public AgentConfigDirectoryLocationResolver(List<AgentConfigurationDirectoryLocationProvider> providers) {
 		this.providers = providers;
 	}
 
 	public Path resolve() {
 
-		for (AgentConfigurationLocationProvider provider : providers) {
+		for (AgentConfigurationDirectoryLocationProvider provider : providers) {
 
 			var location = provider.getLocation();
 
@@ -48,7 +48,7 @@ public class AgentConfigLocationResolver {
 					throw new AgentConfigurationException("agent-config.yaml was not found in " + configDirectory);
 				}
 
-				return configFile;
+				return configDirectory;
 
 			}
 		}
