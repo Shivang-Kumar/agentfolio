@@ -37,9 +37,8 @@ public class AgentConfigurationValidator {
 
             log.error("Configuration validation failed:");
 
-            errors.forEach(error -> log.error(" - {}", error));
 
-            throw new AgentConfigurationException("Please set up the configuration properties correctly.");
+            throw new AgentConfigurationException("Please set up the configuration properties correctly.",errors);
         }
 
        return;
