@@ -5,7 +5,7 @@ import java.nio.file.Path;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.github.shivang.agentfolio.config.locator.AgentConfigLocationResolver;
+import com.github.shivang.agentfolio.config.locator.AgentConfigDirectoryLocationResolver;
 import com.github.shivang.agentfolio.config.properties.AgentProperties;
 import com.github.shivang.agentfolio.config.reader.AgentConfigurationReader;
 import com.github.shivang.agentfolio.config.validator.AgentConfigurationValidator;
@@ -14,10 +14,12 @@ import com.github.shivang.agentfolio.config.validator.AgentConfigurationValidato
 public class AgentConfiguration {
 
 	@Bean
-	public AgentProperties agentProperties(AgentConfigLocationResolver resolver, AgentConfigurationReader reader, AgentConfigurationValidator validator) {
-		Path configFile=resolver.resolve();
+	public AgentProperties agentProperties(AgentConfigDirectoryLocationResolver configDirectoryResolver, AgentConfigurationReader reader, AgentConfigurationValidator validator) {
+		Path configDirectory=configDirectoryResolver.resolve();
+		Path configFile =configDirectory.resolve("agent-config.yaml");
 		AgentProperties agentProperties=reader.read(configFile);
 		validator.validate(agentProperties);
 		return agentProperties;
 	}
+
 }
