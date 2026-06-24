@@ -19,7 +19,7 @@ public class AgentConfigDirectoryLocationResolver {
 		this.providers = providers;
 	}
 
-	public Path resolve() {
+	public Path resolveConfigDirectoryLocation() {
 
 		for (AgentConfigurationDirectoryLocationProvider provider : providers) {
 

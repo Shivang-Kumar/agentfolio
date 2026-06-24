@@ -26,6 +26,11 @@
         <artifactId>agent-config</artifactId>
         <version>${project.version}</version>
     </dependency>
+    <dependency>
+        <groupId>com.github.shivang</groupId>
+        <artifactId>agent-knowledge</artifactId>
+        <version>${project.version}</version>
+    </dependency>
 
 </dependencies>
 

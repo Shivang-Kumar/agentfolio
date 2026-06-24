@@ -15,7 +15,7 @@ public class AgentConfiguration {
 
 	@Bean
 	public AgentProperties agentProperties(AgentConfigDirectoryLocationResolver configDirectoryResolver, AgentConfigurationReader reader, AgentConfigurationValidator validator) {
-		Path configDirectory=configDirectoryResolver.resolve();
+		Path configDirectory=configDirectoryResolver.resolveConfigDirectoryLocation();
 		Path configFile =configDirectory.resolve("agent-config.yaml");
 		AgentProperties agentProperties=reader.read(configFile);
 		validator.validate(agentProperties);
