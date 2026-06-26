@@ -1,4 +1,5 @@
-package com.github.shivang.core.configuration;
+package com.github.shivang.agentfolio.core.service;
+
 
 import org.springframework.stereotype.Service;
 

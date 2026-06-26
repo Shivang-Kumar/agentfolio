@@ -1,4 +1,4 @@
-package com.github.shivang.core.configuration;
+package com.github.shivang.agentfolio.core.service;
 
 import reactor.core.publisher.Flux;
 
