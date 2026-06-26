@@ -13,5 +13,25 @@
     </parent>
 
     <artifactId>agent-core</artifactId>
+    <dependencies>
+		    <dependency>
+				    <groupId>org.springframework</groupId>
+				    <artifactId>spring-context</artifactId>
+		    </dependency>
+		    <dependency>
+                    <groupId>io.projectreactor</groupId>
+                    <artifactId>reactor-core</artifactId>
+            </dependency>
+             <dependency>
+       				 <groupId>com.github.shivang</groupId>
+      				 <artifactId>agent-config</artifactId>
+       				 <version>${project.version}</version>
+    		 </dependency>
+    			<dependency>
+        			<groupId>com.github.shivang</groupId>
+       				 <artifactId>agent-knowledge</artifactId>
+      				  <version>${project.version}</version>
+   				 </dependency>
+    </dependencies>
 
 </project>
