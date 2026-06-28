@@ -19,7 +19,12 @@ public class  PromptServiceImplementation {
 
 	    @Override
 	    public String buildPrompt(String userMessage) {
-	        throw new UnsupportedOperationException("Not implemented yet");
+	    	  return String.format(
+	                  SystemPromptTemplate.SYSTEM_PROMPT,
+	                  agentProperties.owner(),
+	                  knowledgeProvider.provideKnowledge(),
+	                  userMessage
+	          );
 	    }
 }
 }
