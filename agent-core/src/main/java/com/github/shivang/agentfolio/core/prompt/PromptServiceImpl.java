@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import com.github.shivang.agentfolio.config.properties.AgentProperties;
 import com.github.shivang.agentfolio.knowledge.provider.KnowledgeProvider;
 
-public class  PromptServiceImplementation {
 	@Service
 	public class PromptServiceImpl implements PromptService {
 
@@ -26,5 +25,4 @@ public class  PromptServiceImplementation {
 	                  userMessage
 	          );
 	    }
-}
 }

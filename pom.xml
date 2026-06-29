@@ -11,7 +11,7 @@
  
  <properties>
     <java.version>21</java.version>
-    <spring-ai.version>1.0.1</spring-ai.version>
+    <spring-ai.version>1.1.8</spring-ai.version>
 </properties>
 
 
@@ -32,7 +32,7 @@
     <module>agent-api</module>
    </modules>
    
-  <dependencyManagement>
+ <dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework.ai</groupId>
@@ -42,5 +42,5 @@
             <scope>import</scope>
         </dependency>
     </dependencies>
-  </dependencyManagement>
+</dependencyManagement>
 </project>
