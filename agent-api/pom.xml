@@ -17,9 +17,9 @@
     <dependencies>
 
     <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter</artifactId>
-    </dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-webflux</artifactId>
+</dependency>
 
     <dependency>
         <groupId>com.github.shivang</groupId>
@@ -31,7 +31,15 @@
         <artifactId>agent-knowledge</artifactId>
         <version>${project.version}</version>
     </dependency>
-
+    <dependency>
+    <groupId>com.github.shivang</groupId>
+    <artifactId>agent-core</artifactId>
+    <version>${project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.ai</groupId>
+		    <artifactId>spring-ai-starter-model-google-genai</artifactId>
+		</dependency>
 </dependencies>
 
 </project>
