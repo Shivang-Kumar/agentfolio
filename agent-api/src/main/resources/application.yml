@@ -1,7 +1,13 @@
 spring:
   ai:
-    google:
-      genai:
-        api-key: ${GEMINI_API_KEY}
+    openai:
+        api-key: ${GROQ_API_KEY}
+        base-url: https://api.groq.com/openai
         chat:
-           model: gemini-2.5-flash
+         options:
+           model: llama-3.3-70b-versatile
+
+logging:
+ level:
+   org.springframework.ai: DEBUG
+   org.springframework.web.reactive.function.client: DEBUG
