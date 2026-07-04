@@ -37,6 +37,16 @@
        				 <artifactId>agent-memory</artifactId>
       				  <version>${project.version}</version>
    				 </dependency>
+   				 
+   				 
+   				 <dependency>
+        			<groupId>com.github.shivang</groupId>
+       				 <artifactId>agent-guardrails</artifactId>
+      				  <version>${project.version}</version>
+   				 </dependency>
+
+   				 
+   				 
 		<dependency>
 			<groupId>org.springframework.ai</groupId>
 			<artifactId>spring-ai-model</artifactId>

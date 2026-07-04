@@ -9,6 +9,8 @@ import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.stereotype.Service;
 
 import com.github.shivang.agentfolio.core.prompt.PromptService;
+import com.github.shivang.agentfolio.gaurdrails.configuration.GaurdrailsConfiguration;
+import com.github.shivang.agentfolio.gaurdrails.service.GuardrailService;
 import com.github.shivang.agentfolio.service.ConversationMemoryService;
 
 import jakarta.annotation.PostConstruct;
@@ -20,11 +22,14 @@ public class ConversationServiceImpl implements ConversationService {
 	private final PromptService promptService;
 	private final ChatClient chatClient;
 	private final ConversationMemoryService conversationMemoryService;
-	public ConversationServiceImpl(PromptService promptService,ChatClient chatClient,ConversationMemoryService conversationMemoryService)
+	private final GuardrailService gaurdrailService;
+	
+	public ConversationServiceImpl(PromptService promptService,ChatClient chatClient,ConversationMemoryService conversationMemoryService,GuardrailService guardRailService)
 	{
 		this.promptService=promptService;
 		this.chatClient=chatClient;
 		this.conversationMemoryService=conversationMemoryService;
+		this.gaurdrailService=guardRailService;
 	}
 
 	
@@ -32,6 +37,7 @@ public class ConversationServiceImpl implements ConversationService {
     public Flux<String> chat(String sessionId, String message) {
     	
     	
+    	   gaurdrailService.validate(message);
     	  conversationMemoryService.addMessage(sessionId,new UserMessage(message));
     	  List<Message> history = conversationMemoryService.getConversation(sessionId);
     	  String prompt = promptService.buildPrompt(history,message);
