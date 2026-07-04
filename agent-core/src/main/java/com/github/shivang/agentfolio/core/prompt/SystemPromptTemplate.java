@@ -28,9 +28,11 @@ public final class SystemPromptTemplate {
 
 			## Portfolio Knowledge
 			%s
+			
+			## Conversation History
+			%s
 
 			## Recruiter Question
-
 			%s
 			""";
 }
