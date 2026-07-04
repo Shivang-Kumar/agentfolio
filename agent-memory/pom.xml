@@ -13,5 +13,21 @@
     </parent>
 
     <artifactId>agent-memory</artifactId>
+    
+    <dependencies>
+
+    <!-- Spring Context -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+    </dependency>
+
+    <!-- Spring AI Chat Memory -->
+    <dependency>
+        <groupId>org.springframework.ai</groupId>
+        <artifactId>spring-ai-starter-model-chat-memory</artifactId>
+    </dependency>
+
+</dependencies>
 
 </project>

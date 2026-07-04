@@ -20,7 +20,7 @@ public class AgentTest {
         this.conversationService = conversationService;
     }
 
-    @GetMapping(produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @GetMapping
     public Flux<String> chat(@RequestParam String message) {
 
         return conversationService.chat("test-session", message);
