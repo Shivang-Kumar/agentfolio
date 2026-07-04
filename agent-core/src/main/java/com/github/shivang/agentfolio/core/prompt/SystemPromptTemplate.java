@@ -32,7 +32,7 @@ public final class SystemPromptTemplate {
 			## Conversation History
 			%s
 
-			## Recruiter Question
+			## Current User Message
 			%s
 			""";
 }
