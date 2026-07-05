@@ -37,15 +37,12 @@ public class ConversationServiceImpl implements ConversationService {
     public Flux<String> chat(String sessionId, String message) {
     	
     	
-    	   gaurdrailService.validate(message);
+    	  gaurdrailService.validate(message);
     	  conversationMemoryService.addMessage(sessionId,new UserMessage(message));
     	  List<Message> history = conversationMemoryService.getConversation(sessionId);
     	  String prompt = promptService.buildPrompt(history,message);
     	  return chatClient.prompt(prompt)
     	            .stream()                           // 1. Keep streaming to keep Netty happy (non-blocking)
-    	            .content()                          // 2. Returns Flux<String>
-    	            .collectList()                      // 3. Collects all chunks into a Mono<List<String>> asynchronously
-    	            .map(list -> String.join("", list)) // 4. Joins the entire list into one single String
-    	            .flux();        
+    	            .content();                          // 2. Returns Flux<String>       
     }
 }

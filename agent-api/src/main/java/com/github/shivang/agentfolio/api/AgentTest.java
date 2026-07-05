@@ -24,10 +24,10 @@ public class AgentTest {
         this.conversationService = conversationService;
     }
 
-    @GetMapping
-    public Flux<String> chat(@RequestParam String message) {
+    @GetMapping(produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<String> chat(@RequestParam String sessionId ,@RequestParam String message) {
 
-        return conversationService.chat("test-session", message);
+        return conversationService.chat(sessionId, message);
     }
     
     @Bean
