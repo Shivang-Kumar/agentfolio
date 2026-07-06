@@ -5,6 +5,21 @@ AgentFolio Backend is a Spring Boot application that powers an AI-driven portfol
 The backend is designed with a modular architecture, supports real-time AI response streaming using Server-Sent Events (SSE), and is easily configurable through external configuration files.
 
 ---
+## Demo
+
+[![Watch Demo](agent-folio.png)](https://drive.google.com/file/d/1R_eVEwVYqaUGhGzN_t4QhQ2T7sIKT_WD/view?usp=sharing)
+
+The demo covers:
+
+- Project overview
+- Backend architecture
+- Package structure
+- Configuration setup
+- Live AI chat
+- Real-time response streaming
+- AWS EC2 deployment
+
+
 
 ## Features
 
@@ -104,17 +119,3 @@ POST /api/chat
 The endpoint accepts a user message and streams the AI-generated response using **Server-Sent Events (SSE)**, providing a smooth, real-time conversational experience.
 
 ---
-
-## Demo
-
-🎥 **Video Demonstration:** *(Add your YouTube link here)*
-
-The demo covers:
-
-- Project overview
-- Backend architecture
-- Package structure
-- Configuration setup
-- Live AI chat
-- Real-time response streaming
-- AWS EC2 deployment
