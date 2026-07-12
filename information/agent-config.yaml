@@ -1,0 +1,18 @@
+owner:
+ name: Shivang Kumar
+ role: admin
+
+tone:
+ professional
+
+llm:
+ provider: openai
+ apiKey: my_key
+
+memory:
+ redisUrl: localhost
+
+
+scheduling:
+ type: true
+ link: 5
